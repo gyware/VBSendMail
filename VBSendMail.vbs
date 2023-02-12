@@ -6,6 +6,9 @@ Set re = New RegExp
          End With
         Do Until valid = True
 		Email.To = InputBox("To:", "VBSendMail") 'To
+		If Email.To = "" Then
+		WScript.Quit
+		End If
          If re.Test(Email.To) = True Then
 			valid = True
 		Else
@@ -21,6 +24,9 @@ Set re = New RegExp
 		
 Do Until valid = True
 Email.From = InputBox("From:", "VBSendMail") 'From
+If Email.From = "" Then
+		WScript.Quit
+		End If
          If re.Test(Email.From) = True Then
 			valid = True
 		Else
