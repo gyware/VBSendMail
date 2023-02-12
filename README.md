@@ -8,6 +8,6 @@
 A simple way to send email without an SMTP server, now in just one VBScript file.
 
 ## Setup
-Just download, extract and run VBMail-setup.exe to install.
+Just download, extract and run VBSendMail.vbs.
 
 *Easy to use, easy to understand.*
