@@ -70,7 +70,7 @@ On Error Resume Next
 Email.Send
 Do until success = True
 If Err.Number <> 0 Then
-input = MsgBox("Error: Email send failed." & vbCrLf & "To: " & Split(Email.To, """")(1) & vbCrLf & "From: " & Split(Email.From, """")(1) & vbCrLf & "Description: " & Err.Description & vbCrLf & "Note: Most likely the SMTP server has rejected your email due to your uncommon sending IP address. You can try again or alternatively get your IP address whitelisted by the recipient's SMTP server.", vbCritical+vbRetryCancel, "VBSendMail")
+input = MsgBox("Error: Email send failed." & vbCrLf & "To: " & Split(Email.To, """")(1) & vbCrLf & "From: " & Split(Email.From, """")(1) & vbCrLf & "Description: " & Err.Description & vbCrLf & "Note: Most likely the SMTP server has rejected your email due to your IP address not being whitelisted by spam protection as an SMTP server. You can try again or alternatively get your IP address whitelisted by the recipient's SMTP server.", vbCritical+vbRetryCancel, "VBSendMail")
 			If input = vbRetry Then
 				success = False
 			Else
